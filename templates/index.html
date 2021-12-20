@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+<body>
+
+{% block header %}
+  <div style="width: 500px; margin: 30px auto;">
+    <h1>Hallo, {{username}}!!!</h1>
+    <h3>You can download files from list</h3>
+  </div>
+{% endblock %}
+ 
+{% block body %}
+   <div style="width: 500px; margin: 30px auto;">
+    <table width="100%" border="0" cellpadding="4">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col" style="text-align: left">File</th>
+    </tr>
+    {% for file in files %}
+    <tr>
+        <td><img id="image" height="20px" src="static/file.png"></td>
+        <td><a href="download_file/{{file}}">{{file}}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  </div>
+{% endblock %}
+    
+{% block footer %}
+<div style="width: 500px; margin: 30px auto;">
+    <h2>You can upload your file here</h2>
+    <h3>You can upload only 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'</h3>
+    <form action="upload_file" method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+   </div>
+{% endblock %}
+
+
+</body>
+</html>

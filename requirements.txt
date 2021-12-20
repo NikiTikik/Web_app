@@ -1,0 +1,5 @@
+flake8==4.0.1
+Flask==2.0.2
+Flask-HTTPAuth==4.5.0
+python-dotenv==0.19.1
+Werkzeug==2.0.2
