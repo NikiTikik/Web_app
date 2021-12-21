@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'}
-UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
+UPLOAD_FOLDER = '/files'
 
 
 app = Flask(__name__, template_folder='templates', static_folder="static")
